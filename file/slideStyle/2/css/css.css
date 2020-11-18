@@ -1,7 +1,0 @@
-#slide_style_box2 ul{ margin:0; padding-left:0; position:absolute; top:0; left:0; z-index:1; }
-#slide_style_box2 ul li{ list-style:none; float:left; }
-#slide_style_box2 p{ line-height:30px; position:absolute; bottom:20px; left:0; width:100%; z-index:2; text-align:center; margin:0; }
-#slide_style_box2 p a{ display:inline-block; height:30px; padding:0 10px; background:#000; font-size:14px; font-family:arial; line-height:30px; color:#fff; text-decoration:none; filter:alpha(opacity:80); opacity:0.8; margin-right:1px; }
-#slide_style_box2 p .active{ background:yellow; color:#000; font-weight:bold; }
-#slide_style_box2 img{ width:300px; height:250px; }
-#slide_style_box2{ width:300px; height:250px; position:absolute;overflow:hidden; }
