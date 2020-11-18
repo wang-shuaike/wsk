@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="/template/admin/css/style.css" />
+<script type="text/javascript" src="/template/admin/js/jquery.js"></script>
+<script type="text/javascript" src="/template/admin/js/main.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	$('.selectFileInput').click(function(){
+		var checkeds = !$(this).find('input:checkbox').attr('checked');
+		$(this).find('input:checkbox').attr('checked',checkeds);
+	})	
+})
+</script>
+</head>
+
+<body>
+<div class="dqnav">
+<ul>
+	<li>当前位置：</li>
+	<li><a href="?m=index&a=main">后台首页</a></li>
+	<li><span>&gt;</span></li>
+	<li>文件管理</li>
+</ul>
+</div>
+<div class="mainBox">
+    <div class="mainList">
+    <h1 class="slideSub"><a href="?m=File&a=index&type=0">图片管理</a><a href="?m=File&a=index&type=1" class="curr">文件管理</a></h1>
+    	<form action="?m=File&a=delete" method="post">
+        <input type="hidden" name="type" value="1" />
+    	<div class="fileList mainList uploadListBox" id="allcheckbox">
+            <table cellpadding="0" border="0" cellspacing="1">
+                <tr>
+                    <th width="5%"><input type="checkbox" class="allcheckbox" /></th>
+                    <th width="5%">ID</th>
+                    <th width="55%">文件名</th>
+                    <th width="10%">大小</th>
+                    <th width="15%">上传时间</th>
+                </tr>
+                <{foreach from=$file item=v name=filelist}>
+                <tr class="selectFileInput">
+                    <td><input type="checkbox" value='<{$v.fid}>#####<{$v.path}>' id='file<{$smarty.foreach.filelist.iteration}>' name="fid[]" /></td>
+                    <td><{$v.fid}></td>
+                    <td class="padding"><label for="file<{$smarty.foreach.filelist.iteration}>"><{$v.temname}><br /><span class="hui"><{$v.name}></span></label></Td>
+                    <td><{$v.size}></td>
+                    <td><{$v.time|date_format:'%Y-%m-%d %H:%M:%S'}></td>
+                </tr>
+                <{/foreach}>
+                <tr>
+                	<td><input type="checkbox" class="allcheckbox" /></td>
+                    <td colspan="5" class="padding"><input type="submit" value="删除选中" onclick="return confirm('确定要删除吗？');" name="delfile" class='inputSub1' /></td>
+                </tr>
+            </table>
+        </div>
+        </form>
+    </div>
+    <div class="page">共 <{$num}> 条 <{$page}></div>
+</div>
+</body>
+</html>

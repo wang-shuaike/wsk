@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><{$webname}></title>
+<meta name="keywords" content="<{$keywords}>" />
+<meta name="description" content="<{$description}>"/>
+<link rel="stylesheet" type="text/css" href="<{$weburl}>template/default/css/style.css" />
+<script type="text/javascript" src="<{$weburl}>template/default/js/jquery.js"></script>
+<script type="text/javascript" src="<{$weburl}>template/default/js/main.js"></script>
+</head>
+
+<body>
+<{include file='header.html'}>
+<div class='indexBox1 width'>
+	<div class="indexBox1_l">
+    	<h1>产品中心<a href="<{classurl id=5}>"><font>更多</font></a></h1>
+        <div class="index_product boxbg1">
+        	<{article classid=5 num=5}>
+            <ul id="slide_product">
+                <{foreach from=$article_data item=v name=product_s}>
+                <li<{if $smarty.foreach.product_s.iteration eq 1}> style='display:block;' class='curr'<{/if}>><a href="<{$v.url}>"><img src="<{$v.pic}>" alt='<{$v.title}>' width='180' height='180' /></a></li>
+                <{/foreach}>
+            </ul>
+            <span id="prev"></span>
+            <span id="next"></span>
+        </div>
+    </div>
+	<div class="indexBox1_c">
+    	<h1>公司介绍<a href="<{classurl id=1}>"><font>更多</font></a></h1>
+        <div class="index_about boxbg">
+        	<{single classid=1}>
+            <p><{$single_data.content|lmxstr:250}></p>
+        </div>
+    </div>
+	<div class="indexBox1_r">
+    	<h1>新闻动态<a href="<{classurl id=6}>"><font>更多</font></a></h1>
+        <div class="index_news boxbg">
+        <{article classid=6 num=7}>
+        <ul>
+        	<{foreach from=$article_data item=v}>
+            <li><a href="<{$v.url}>"><{$v.title|lmxstr:30}></a></li>
+            <{/foreach}>
+        </ul>
+        </div>
+    </div>
+</div>
+<{include file='footer.html'}>
+<div class="link width">
+	<table cellpadding="0" border="0" cellspacing="0">
+    	<tr>
+        	<td width="70">友情链接：</td>
+            <td><{link}>
+            	<ul>
+                	<{foreach from=$link_data item=v}>
+                    <li><a href="<{$v.url}>"><{$v.name}></a></li>
+                    <{/foreach}>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="/template/admin/css/style.css" />
+<script type="text/javascript" src="/template/admin/js/jquery.js"></script>
+<script type="text/javascript" src="/template/admin/js/main.js"></script>
+<script type="text/javascript" src="/template/admin/js/book.js"></script>
+
+
+</head>
+
+<body>
+<div class="dqnav">
+<ul>
+	<li>当前位置：</li>
+	<li><a href="?m=index&a=main">后台首页</a></li>
+	<li><span>&gt;</span></li>
+	<li><a href="?m=Book&a=index">留言板管理</a></li>
+	<li><span>&gt;</span></li>
+	<li>回复留言</li>
+</ul>
+</div>
+<div class="mainBox">
+    <div class="mainForm" id="mainForm">
+        <form action="?&m=Book&a=reply" method="post" name="form1" onsubmit="return check();">
+    	<table cellpadding="0" border="0" cellspacing="0">
+        	<tr>
+            	<td align="right" width="12%">回复内容：</td>
+            	<td width="88"><textarea class="textarea" name="content" id="content"><{$content}></textarea></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="hidden" name="id" value="<{$id}>" /><input type="hidden" name="type" value="<{$type}>" /><input type="submit" value="提交" class="inputSub" name="reply" id="reply" /></td>
+            </tr>
+        </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>

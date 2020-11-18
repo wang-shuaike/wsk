@@ -1,0 +1,22 @@
+body{ background:#fbfbfb;}
+.loginBox{ padding-top:150px; margin:0px auto; width:510px; height:1%; overflow:hidden;}
+.loginBox_l,.loginBox_r{ float:left; height:180px;}
+.loginBox_l{ width:200px; padding-top:15px;}
+.loginBox_r{ width:280px; padding-left:30px;}
+.loginBox_l p{ background:url(../img/loginLogo.gif) no-repeat 30px 10px; height:35px; padding-top:75px; color:#333333; padding-left:30px; border-right:1px solid #cccccc;}
+.loginBox_r h1{ font-size:16px; font-family:'微软雅黑'; color:#333333; padding-left:70px; padding-bottom:15px;}
+.loginBox_r li{ padding:5px 0px; font-size:14px; color:#333333; font-family:'微软雅黑';}
+.loginBox_r li input.inputText{ width:150px;}
+.fooLogin p{ font-family:Arial; color:#777; text-align:center; font-size:12px; padding-top:40px;}
+.fooLogin{ clear:both;}
+.fooLogin p a{ color:#1c57c4;}
+
+
+
+
+
+
+
+
+
+

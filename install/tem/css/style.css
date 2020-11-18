@@ -1,0 +1,55 @@
+h1,h2,h3,h4,h5,h6,div,ul,li,ol,span,strong,body,em,b,p,dl,dt,dd,table,th,td,tr{padding:0px;margin:0px;font-size:12px;font-family:"微软雅黑"; color:#333333;}em{font-style:normal}img{border:0}ul,li{list-style:none}a{text-decoration:none;outline:none}a:hover{text-decoration:none}
+body{ background:#F9F9F9;}
+.width{ width:992px; margin:0px auto;}
+.top{ background:#41B1D6;}
+.logo{ position:relative;}
+.logo span{ color:#fff; position:absolute; right:10px; bottom:10px;}
+.mainBox{ background:url(../images/bg.gif) repeat-x; padding-top:5px;}
+.but{ text-align:center; height:75px; line-height:75px;}
+.but span{ font-size:16px; margin:0px 20px;}
+.but span.curr{ color:#40C000;}
+.but span font{ font-size:20px; color:#999999; font-family:Arial; margin-right:7px;}
+.main{ border:1px solid #CECECE; width:970px; background:#FCFCFC; padding:10px;}
+.content1 h1{ text-align:center; padding:10px 0px; font-size:24px; padding-bottom:30px;}
+.red{ color:#f00;}
+.content1 p{ padding:0px 30px; padding-bottom:10px;}
+.content1 ul{ padding:0px 30px; padding-bottom:10px;}
+.content1 h2{ padding:0px 30px; padding-bottom:10px;font-size:16px; margin-top:20px;}
+.content1 li{ padding-bottom:5px;}
+.content1 p.foo{ font-size:14px; padding-top:10px;}
+.content1 p a{ color:#06519D; text-decoration:underline;}
+.footer{ text-align:center; padding:20px 0px; padding-top:10px; font-size:14px;}
+.footer a{ color:#06519D;}
+.form_sub{ text-align:center; padding-top:10px;}
+.form_sub input{ padding:3px 5px;}
+.content2 h1{ font-size:14px; height:30px; line-height:30px; font-weight:normal;}
+
+.mainK{ border:1px solid #EEEEEE; background:#FAFAFA; margin-top:30px;}
+.mainK h2{ padding-left:20px; position:relative; top:-10px;}
+.mainK h2 span{ color:#1C57C4; font-size:14px;}
+.checksys ul{ padding:15px 30px; padding-top:10px;}
+.checksys li{ height:28px; line-height:28px; color:#009933;}
+.checksys li span{ display:inline-block; color:#009933; font-weight:bold; width:180px; padding-left:20px; background:url(../images/ok.png) no-repeat left center;}
+.checksys li.no{ color:#FF7016;}
+.checksys li.no span{ background:url(../images/no.png) no-repeat left center; color:#FF7016;}
+.mainK p{ line-height:20px; padding:20px; padding-top:0px;}
+
+.checkdir table{ width:96%; margin:0px 2%; background:#EEEEEE; margin-bottom:10px;}
+.checkdir td,.checkdir th{ text-align:left; padding:7px 6px; background:#FAFAFA;}
+.checkdir th{ font-size:14px; background:#41B1D6; color:#fff;}
+.checkdir td{ color:#009933; font-weight:bold;}
+.checkdir td span{ color:#009933; font-weight:bold; padding-left:20px; display:inline-block; background:url(../images/ok.png) no-repeat left center;}
+.checkdir tr.no td{ color:#FF7016;}
+.checkdir tr.no td span{ color:#FF7016; font-weight:bold; padding-left:20px; display:inline-block; background:url(../images/no.png) no-repeat left center;}
+.check3 table{ width:96%; margin:0px 2%; margin-bottom:10px;}
+.check3 td{ padding:7px 6px;}
+.check3 td strong{ font-size:14px;}
+.check3 td span{ margin-left:10px; color:#929292;}
+.inputText{ border:1px solid #9a9a9a; border-right:1px solid #eeeeee; border-bottom:1px solid #eeeeee; height:24px; line-height:24px; padding:0px 5px; outline:none; width:200px;}
+
+#start{ padding:10px 20px;}
+#start li{ font-weight:bold; font-size:12px; color:#009933;height:28px; line-height:28px;}
+.install_ok h1{ color:#009933; font-size:22px; font-weight:normal; text-align:center;}
+.install_ok_c{ margin:10px auto; border:1px solid #EEEEEE; background:#FAFAFA; width:400px; padding:20px;}
+.ok_sub{ padding-top:10px;}
+.ok_sub input{ padding:3px 7px;}

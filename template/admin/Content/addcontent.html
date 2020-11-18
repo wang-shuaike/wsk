@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="/template/admin/css/style.css" />
+<script type="text/javascript" src="/template/admin/js/jquery.js"></script>
+<script type="text/javascript" src="/template/admin/js/main.js"></script>
+<script type="text/javascript" src="/template/admin/js/content.js"></script>
+<{$editorFileJs}>
+</head>
+
+<body>
+<div class="dqnav">
+<ul>
+	<li>当前位置：</li>
+	<li><a href="?m=index&a=main">后台首页</a></li>
+	<li><span>&gt;</span></li>
+	<li><a href="?m=Content&a=index&classid=<{$classid}>">信息管理</a></li>
+	<li><span>&gt;</span></li>
+	<li>增加信息</li>
+</ul>
+</div>
+<div class="mainBox">
+    <div class="mainForm" id="mainForm">
+        <form action="?&m=Content&a=add" method="post" name="form1" onsubmit="return checkContent();">
+    	<table cellpadding="0" border="0" cellspacing="0">
+            <tr>
+            	<td align="right" width="12%">标题：</td>
+            	<td width="88%"><input type="text" class="inputText inputWidth" name="title" id="title" /> <span class="succ">网页标题</span></td>
+            </tr>
+            <tr>
+            	<td align="right">属性：</td>
+            	<td>推荐 <select name="tuijian" id="tuijian">
+                <option value=0>不推荐</option>
+                <{foreach from=$tuijianSelect item=v key=k}>
+                <option value=<{$k}>><{$v}></option>
+                <{/foreach}>
+                </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;热门 <select name="remen" id="remen">
+                <option value=0>不推荐</option>
+                <{foreach from=$remenSelect item=v key=k}>
+                <option value=<{$k}>><{$v}></option>
+                <{/foreach}>
+                </select></td>
+            </tr>
+            <tr>
+            	<td align="right">外部链接：</td>
+                <td><input type="text" name="url" id="url" class="inputText" /> <span class="succ">填写后信息连接地址将为此链接 “http://开头”</span></td>
+            </tr>
+        	<tr>
+            	<td align="right">关键词：</td>
+            	<td><input type="text" class="inputText inputWidth" name="keywords" id="keywords" /> <span class="succ">网页关键字 以英文逗号“,”隔开</span></td>
+            </tr>
+            <tr>
+            	<td align="right">发布时间：</td>
+                <td><input type="text" class="inputText" value="<{$smarty.now|date_format:'%Y-%m-%d %H:%M:%S'}>" style="width:150px;" id="time" name="time" /> <input type="button" class="inputSub1" value="获取当前时间" onclick="document.getElementById('time').value='<{$smarty.now|date_format:'%Y-%m-%d %H:%M:%S'}>'" /></td>
+            </tr>
+            <tr>
+            	<td align="right">描述：</td>
+                <td><textarea class="textarea" name="description"></textarea> <span class="succ">网页描述</span></td>
+            </tr>
+            <{include file="$formdir"}>
+            <tr>
+            	<td></td>
+                <td><input type="hidden" name="backurl" value="<{$backurl}>" /><input type="hidden" name="classid" value="<{$classid}>" /><input type="submit" value="提交" name="addInfo" class="inputSub" id="addInfo" /></td>
+            </tr>
+       </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>

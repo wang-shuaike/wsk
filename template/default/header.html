@@ -1,0 +1,37 @@
+<div class="top width">
+  <div class="logo"><a href="<{$weburl}>" title="<{$webname}>"><img src="<{$weburl}>template/default/image/logo.gif" alt="<{$webname}>" /></a></div>
+  <div class="searchBox">
+    <form action="<{$weburl}>index.php" method="get">
+    <input type="hidden" name='m' value="Search" />
+    <input type="hidden" name="a" value="index" />
+    <input type="hidden" name="classid" value="5" />
+    <input type="hidden" name="tem" value="index" />
+    <input type="hidden" name="field" value="title,keywords,description" />
+  	<table cellpadding="0" cellspacing="0" border="0">
+    	<tr>
+        	<td><input type="text" name="keywords" class="inputText" /></td>
+        	<td><input type="submit" value=" " class="inputSub" /></td>
+        </tr>
+    </table>
+    </form>
+  </div>
+</div>
+<div class="nav width" id="nav">
+  <{menu child=1}>
+  <ul>
+    <li><a href="<{$weburl}>" title="首页"<{if $classid eq 'home'}> class="curr"<{/if}>>首页</a></li>
+    <{foreach from=$menu_data item=v}>
+    <li><a href="<{$v.classurl}>" title="<{$v.classname}>"<{if ($v.classid eq $topid || $v.classid eq $classid) && $classid != 4}> class='curr'<{/if}>><{$v.classname}></a>
+    	<{if $v.child}>
+        <dl>
+        <{foreach from=$v.child item=i}>
+        <dd><a href="<{$i.classurl}>"><{$i.classname}></a></dd>
+        <{/foreach}>
+        </dl>
+        <{/if}>
+    </li>
+    <{/foreach}>
+    <li><a href="<{classurl id=4}>"<{if $classid eq 4}> class='curr'<{/if}>>联系我们</a></li>
+  </ul>
+</div>
+<div class="slide width"><{slide id=1 style=3 width=900 height=310}></div>

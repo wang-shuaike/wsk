@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="/template/admin/css/style.css" />
+<script type="text/javascript" src="/template/admin/js/jquery.js"></script>
+<script type="text/javascript" src="/template/admin/js/main.js"></script>
+
+
+</head>
+
+<body>
+<div class="dqnav">
+<ul>
+	<li>当前位置：</li>
+	<li><a href="?m=index&a=main">后台首页</a></li>
+	<li><span>&gt;</span></li>
+	<li>友情链接管理</li>
+</ul>
+</div>
+<div class="mainBox">
+    <div class="mainList column">
+    	<div class="mainHead"><a href="?m=Link&a=add">+增加友情链接</a></div>
+        <table cellpadding="0" cellspacing="1" border="0">
+        	<form method="post" action="?m=Link&a=sort">
+            <tr>
+                <th width="5%">排序</th>
+                <th width="5%">链接ID</th>
+                <th width="15%">名字</th>
+                <th width="20%">URL地址</th>
+                <th width="10%">图片</th>
+                <th width="25%">备注</th>
+                <th width="20%">操作</th>
+            </tr>
+            <{foreach from=$link item=v}>
+            <tr>
+                <td><input type="text" class="inputText" style="width:25px; text-align:center" name="sort[]" value="<{$v.sort}>" /><input type="hidden" value="<{$v.id}>" name="id[]" /></td>
+                <td><{$v.id}></td>
+                <td><{$v.name}></td>
+                <td><{$v.url}></td>
+                <td><{if $v.img}><img src='<{$v.img}>' width="88" height="32" /><{/if}></td>
+                <td><{$v.remarks|stripslashes}></td>
+                <td><a href="?m=Link&a=update&id=<{$v.id}>">修改</a><a href="?m=Link&a=delete&id=<{$v.id}>" onclick="return confirm('确定要删除此链接？');">删除</a></td>
+            </tr>
+            <{/foreach}>
+            <tr>
+            	<td width="5%"></td>
+                <td width="95%" colspan="6" class="padding"><input type="submit" value="更新排序" class="inputSub1" name="sortSub" /> <span class="hui">值越大排序越前</span></td>
+            </tr>
+            </form>
+        </table>
+    </div>
+    <div class="page">共 <{$num}> 条 <{$page}></div>
+</div>
+</body>
+</html>

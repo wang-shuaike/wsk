@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="/template/admin/css/style.css" />
+<script type="text/javascript" src="/template/admin/js/jquery.js"></script>
+<script type="text/javascript" src="/template/admin/js/main.js"></script>
+
+
+</head>
+
+<body>
+<div class="dqnav">
+<ul>
+	<li>当前位置：</li>
+	<li><a href="?m=index&a=main">后台首页</a></li>
+	<li><span>&gt;</span></li>
+	<li>焦点图管理</li>
+</ul>
+</div>
+<div class="mainBox">
+    <div class="mainList column">
+    	<div class="mainHead"><a href="?m=Slide&a=add">+增加焦点图</a></div>
+        <table cellpadding="0" cellspacing="1" border="0">
+            <tr>
+                <th width="10%">焦点图ID</th>
+                <th width="20%">焦点图名字</th>
+                <th width="40%">说明</th>
+                <th width="30%">操作</th>
+            </tr>
+            <{foreach from=$slide item=v}>
+            <tr>
+                <td><{$v.id}></td>
+                <td><{$v.name}></td>
+                <td><{$v.content}></td>
+                <td><a href="?m=Slide&a=img&id=<{$v.id}>">图片管理</a><a href="?m=Slide&a=update&id=<{$v.id}>">修改</a><a href="?m=Slide&a=delete&id=<{$v.id}>" onclick="return confirm('确定要删除吗？');">删除</a></td>
+            </tr>
+            <{/foreach}>
+        </table>
+    </div>
+    <div class="page">共 <{$num}> 条 <{$page}></div>
+</div>
+</body>
+</html>
